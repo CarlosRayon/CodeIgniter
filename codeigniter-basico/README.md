@@ -39,3 +39,55 @@ Tiene el helper **json_msg** para hacer respuestas en json de forma sencilla
 ## ROUTES
 
 Se deben controlar desde *application/config/routes.php* No he dado con la forma de usarlas desde el fichero de constantes.
+
+## DEPLOY
+
+*Creamos en el servidor un repositorio --bare para produccion :* **Crear todo con el propio usuario para que todo lo creado tenga este usuario y grupo. Osea hacer al servidor como usuario no como root. Sino al subir desde local puede dar error y tendremos que cambiar el usuario:grupo con chown**
+
+`git init --bare domino.git`
+
+*Entramos en la carpeta hook del mismo y creamos un archivo post-receive*
+
+`cd dominio.git/hooks`
+
+`nano post-receive`
+
+*En este fichero ponemos el hook que hara que al hacer push se guarde la información en un directorio definido:
+
+
+```
+#!/bin/sh
+GIT_WORK_TREE=/home/<tu-username>/<tu-dominio.com>/public-folder git checkout -f
+```
+
+*Otra opcion*
+
+```
+#!/bin/sh
+git --work-tree=/home/bbespana/public_html/main --git-dir=/home/bbespana/bigbenespana.git checkout -f master
+```
+
+*Guardamos y cambiamos los permisos a este fichero con el comando:*
+
+`chmod +x post-receive`
+
+*Pasamos a nuestro local.*
+
+*Antes iniciar repositorio creamos un gitignore con los ficheros/directorios que queremos ignorar. En [esta web](https://www.gitignore.io/) podemos crear un modelo*
+
+*Iniciamos repositorio y añadimos archivos*
+
+`git init`
+`git add .`
+`git commit -m "Start Proyect"`
+
+*En local añadimos el remoto que apuntara al repositorio de desarrollo*
+
+```
+git remote add {nombre-remoto} ssh://<tu-username>@<tu-domain-name>/home/<tu-username>/dominio.git 
+```
+
+Hacemos push de nuestro local:
+`git push {nombre-remoto} {rama-remoto (normalmente master)`
+
+
