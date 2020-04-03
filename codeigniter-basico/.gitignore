@@ -32,5 +32,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 # Personal ignore
 
-# .htaccess
+.htaccess
 # /application/config/constants.php
