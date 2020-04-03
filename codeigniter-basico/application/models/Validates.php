@@ -66,8 +66,20 @@ class Validates extends CI_Model
         return true;
     }
 
+    /**
+     * validateZipCode
+     *
+     * @param  int $zipcode
+     * @return boolean
+     */
+    public function validateZipCode($zipCode)
+    {
+        if (!isset($zipCode) || !$this->isValidZipCode($zipCode)) {
+            return false;
+        }
+        return true;
+    }
 
-    // echo json_encode(array('status' => true, 'code' => 'all ok', 'msg' => 'all ok'));
 
     /**
      * isValidPhone Validate phone
@@ -82,6 +94,25 @@ class Validates extends CI_Model
             return false;
         }
         if (!preg_match('/^[9|8|7|6]\d{8}$/', $phone)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * isValidPhone Validate zipcode
+     *
+     * @param  int $tel
+     * @return boolean
+     */
+    private function isValidZipCode($zipCode)
+    {
+
+        if (!is_numeric($zipCode)) {
+            return false;
+        }
+        if (!preg_match('/\d{5}$/', $zipCode)) {
             return false;
         }
 

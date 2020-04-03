@@ -38,7 +38,7 @@ Tiene el helper **json_msg** para hacer respuestas en json de forma sencilla
 
 ## ROUTES
 
-Se deben controlar desde *application/config/routes.php* No he dado con la forma de usarlas desde el fichero de constantes.
+Se deben controlar desde *application/config/routes.php* No he dado con la forma de usarlas desde el fichero de constantes.s
 
 ## DEPLOY
 

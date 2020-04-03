@@ -112,7 +112,6 @@ define('DOMAIN', ENVIRONMENT == 'production' ? 'https://oficial-domain' : 'http:
 
 define("AUTO_LIBRARIES", serialize( array('database', 'email', 'session') ) );
 define("AUTO_HELPER", serialize( array('url', 'file', 'json_msg') ) );
-define("AUTO_MODEL", serialize( array('webservices', 'validates') ) );
+define("AUTO_MODEL", serialize( array('webservices', 'validates', 'handledb') ) );
 
 
-/* ROUTES application/config/routes.php*/
