@@ -94,10 +94,10 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 /* DATABASE application/config/database.php*/
 
-define('DB_HOSTNAME', ENVIRONMENT == 'production' ? 'localhost'  : 'localhost'); // Define host from DB
-define('DB_USERNAME', ENVIRONMENT == 'production' ? 'user'  : 'user'); // Define username from DB
-define('DB_PASSWORD', ENVIRONMENT == 'production' ? 'secret'  : 'secret'); // Define password from DB
-define('DB_DBNAME', ENVIRONMENT == 'production' ? 'database'  : 'database'); // Define db_name from DB
+define('DB_HOSTNAME', ENVIRONMENT == 'development' ? 'localhost'  : 'localhost'); // Define host from DB
+define('DB_USERNAME', ENVIRONMENT == 'development' ? 'user'  : 'user'); // Define username from DB
+define('DB_PASSWORD', ENVIRONMENT == 'development' ? 'secret'  : 'secret'); // Define password from DB
+define('DB_DBNAME', ENVIRONMENT == 'development' ? 'database'  : 'database'); // Define db_name from DB
 
 /* MAINTENANCE MODE application/hooks/maintenance_hook.php SE GESTIONA DESDE EL .htaccess */
 
@@ -106,7 +106,7 @@ define('MAINTENANCE_MODE', ENVIRONMENT == 'build' ? TRUE : FALSE); // Active pag
 
 /* DOMAIN BASE application/config/config.php */
 
-define('DOMAIN', ENVIRONMENT == 'production' ? 'https://oficial-domain' : 'http://' . $_SERVER['HTTP_HOST'] );
+define('DOMAIN', ENVIRONMENT == 'development' ? 'http://' . $_SERVER['HTTP_HOST'] : 'https://oficial-domain' );
 
 /* AUTOLOAD define constant, serialize array*/
 
