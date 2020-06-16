@@ -106,7 +106,9 @@ define('MAINTENANCE_MODE', ENVIRONMENT == 'build' ? TRUE : FALSE); // Active pag
 
 /* DOMAIN BASE application/config/config.php */
 
-define('DOMAIN', ENVIRONMENT == 'development' ? 'http://' . $_SERVER['HTTP_HOST'] : 'https://oficial-domain' );
+// define('DOMAIN', ENVIRONMENT == 'development' ? 'http://' . $_SERVER['HTTP_HOST'] : 'https://oficial-domain' );
+define('DOMAIN', ENVIRONMENT == 'development' ? 'http://' . $_SERVER['HTTP_HOST'] : 'https://' . $_SERVER['HTTP_HOST']);
+
 
 /* AUTOLOAD define constant, serialize array*/
 
