@@ -14,12 +14,12 @@ $.ajax({
 	type: "POST",
 	url: "validate/ajaxValidateNombres",
 	data: data,
-	success: function(respuesta) {
+	success: function (respuesta) {
 		console.log(respuesta);
 	},
-	error: function() {
+	error: function () {
 		console.log("No se ha podido obtener la información");
-	}
+	},
 });
 
 /* ------  Example ajax jquery done.fail.always */
@@ -27,38 +27,46 @@ $.ajax({
 	type: "POST",
 	url: "abonos/ajax_generar_abono",
 	data: data,
-	dataType: "json"
+	dataType: "json",
 })
-	.done(function(result) {
+	.done(function (result) {
 		console.log(result);
 	})
-	.fail(function(xhr, status, error) {
+	.fail(function (xhr, status, error) {
 		console.log(xhr + "\n" + status + "\n" + "\n" + error);
 	})
-	.always(function(xhr, status) {
+	.always(function (xhr, status) {
 		console.log("Estado Peticion: " + status);
 	});
 
 /* ------ Example fetch */
 const form = document.querySelector("#form");
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
 	e.preventDefault();
 	const formData = new FormData(form);
 	fetch("script.php", {
 		method: "post",
-		body: formData
+		body: formData,
 	})
-		.then(function(response) {
+		.then(function (response) {
 			if (response.ok) {
 				return response.json();
 			} else {
 				throw "Error en la llamada Ajax";
 			}
 		})
-		.then(function(data) {
+		.then(function (data) {
 			console.log(data);
 		})
-		.catch(function(error) {
+		.catch(function (error) {
 			console.log("Catch error: " + error);
 		});
 });
+
+/**
+ *
+ * @param {string} loader <none || block>
+ */
+const gifLoader = function (loader = "none") {
+	document.querySelector("#gif-loader").style.display = loader;
+};

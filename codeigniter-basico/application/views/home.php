@@ -20,6 +20,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <body>
 
+    <div id="gif-loader" style="display:none;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%); z-index:2000">
+        <img src="<?php echo base_url('/assets/img/gif-loader.gif') ?>" alt="Gif de carga">
+    </div>
+
     <div class="container mt-5">
         <div class="row">
             <div class="col">
