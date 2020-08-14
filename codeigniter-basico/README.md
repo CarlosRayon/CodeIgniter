@@ -6,7 +6,7 @@ Con esto conseguimos que para cambiar el entorno solo debamos cambiar el valor d
 
 ## INSTALACIÓN
 
-Descomentar los ficheros **Ignores** de *.gitignore* 
+Descomentar los ficheros **Ignores** de *.gitignore*
 Esta ignorada el fichero *application/config/constants.php* para poder definir diferentes rutas tanto en local como producción
 Revisar las rutas en las constantes.
 
@@ -17,7 +17,7 @@ Podemos definir de forma sencilla si queremos https en los entornos
 
 ## MODE MAINTENANCE
 
-El modo mantenimiento esta creado mediante un hook. 
+El modo mantenimiento esta creado mediante un hook.
 Cambia el valor de la variable del .htaccess CI_ENV a built para cambiar a este modo y activar la vista de bajo construcción.
 
 ## HTTP - HTTPS
@@ -35,6 +35,11 @@ Se recomiendo seguir el mismo paradigma si queremos añadir mas autoload.
 ## HElPER
 
 Tiene el helper **json_msg** para hacer respuestas en json de forma sencilla
+
+## PROFILER
+
+Tiene los profiler activados. Para usar poner en el controlador:
+`$this->output->enable_profiler(true);`
 
 ## ROUTES
 
@@ -84,7 +89,7 @@ git --work-tree=/home/bbespana/public_html/main --git-dir=/home/bbespana/bigbene
 *En local añadimos el remoto que apuntara al repositorio de desarrollo*
 
 ```
-git remote add {nombre-remoto} ssh://<tu-username>@<tu-domain-name>/home/<tu-username>/dominio.git 
+git remote add {nombre-remoto} ssh://<tu-username>@<tu-domain-name>/home/<tu-username>/dominio.git
 ```
 
 Hacemos push de nuestro local:
