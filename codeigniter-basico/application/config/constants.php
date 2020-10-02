@@ -113,7 +113,7 @@ define('DOMAIN', ENVIRONMENT == 'development' ? 'http://' . $_SERVER['HTTP_HOST'
 /* AUTOLOAD define constant, serialize array*/
 
 define("AUTO_LIBRARIES", serialize( array('database', 'email', 'session') ) );
-define("AUTO_HELPER", serialize( array('url', 'file', 'json_msg') ) );
+define("AUTO_HELPER", serialize( array('url', 'file', 'json_msg', 'debugger') ) );
 define("AUTO_MODEL", serialize( array('webservices', 'validates', 'handledb') ) );
 
 

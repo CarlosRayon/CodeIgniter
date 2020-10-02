@@ -36,6 +36,8 @@ Se recomiendo seguir el mismo paradigma si queremos añadir mas autoload.
 
 Tiene el helper **json_msg** para hacer respuestas en json de forma sencilla
 
+Disponemos para debugger el helper dd() <var_dump and die > y ddr() <print_r and die>
+
 ## PROFILER
 
 Tiene los profiler activados. Para usar poner en el controlador:
